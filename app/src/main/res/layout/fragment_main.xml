@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainFragment">
+
+    <Button
+        android:id="@+id/btnAddComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:text="Add Comment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLyt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxtSearchBook">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookCommentRecycleView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <Button
+        android:id="@+id/btnUpdateComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="Update Comment"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeleteCommentsSelectr"
+        app:layout_constraintStart_toEndOf="@+id/btnAddComment"
+        app:layout_constraintTop_toTopOf="@+id/btnAddComment" />
+
+    <Button
+        android:id="@+id/btnDeleteCommentsSelectr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Comment"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnAddComment" />
+
+    <EditText
+        android:id="@+id/edtTxtSearchBook"
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Enter Book name to search"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/btnAddComment"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddComment" />
+
+    <Button
+        android:id="@+id/btnSearchBookName"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        android:foreground="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edtTxtSearchBook" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

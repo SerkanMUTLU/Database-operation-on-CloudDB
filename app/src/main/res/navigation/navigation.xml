@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.bookcomments.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addCommentFragment"
+            app:destination="@id/addCommentFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_updateCommentFragment"
+            app:destination="@id/updateCommentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCommentFragment"
+        android:name="com.example.bookcomments.view.AddCommentFragment"
+        android:label="fragment_add_comment"
+        tools:layout="@layout/fragment_add_comment" >
+        <action
+            android:id="@+id/action_addCommentFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateCommentFragment"
+        android:name="com.example.bookcomments.view.UpdateCommentFragment"
+        android:label="fragment_update_comment"
+        tools:layout="@layout/fragment_update_comment" >
+        <action
+            android:id="@+id/action_updateCommentFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="selectedComment"
+            app:argType="com.example.bookcomments.model.Comment" />
+    </fragment>
+    <activity
+        android:id="@+id/userLoginPage2"
+        android:name="com.example.bookcomments.view.UserLoginActivity"
+        android:label="activity_user_login_page"
+        tools:layout="@layout/activity_user_login_page" />
+</navigation>
