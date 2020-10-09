@@ -34,7 +34,7 @@ object CloudDBZoneWrapper {
         fun createObjectType(){
             try{
                 if(cloudDB == null){
-                    Log.w("Result","CloudDB Yok")
+                    Log.w("Result","CloudDB wasn't created")
                     return
                 }
                 cloudDB.createObjectType(ObjectTypeInfoHelper.getObjectTypeInfo())
